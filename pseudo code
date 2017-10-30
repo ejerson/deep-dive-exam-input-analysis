@@ -1,0 +1,22 @@
+For group review;
+
+Pseudo Code for Finding The Largest Product In Grid
+
+Given a 20*20 grid of numbers code will find and compare the product of four numbers until the largest product is obtained.
+Code will iterate through the area from left to right, bottom to top and diagonally.
+Using a nested for loop for to evaluate direction of the array we will use ( i minus 1 for the NE direction) of the array calculating the final product of four numbers found in the NE direction.   The product will be stored and compared to the following products obtained in the following sequence of I and j as they iterate through the list of numbers as we parse integers in the list.
+for i [i = 0] [j + 1] for left to right evaluation;
+for i [i + 1] [j + 1] for SE evaluation;
+and i [i = 1] [j + 0] for top to bottom evaluation.
+
+Taking the product of each evaluation, we will compare the new product to the current product value found and discard the minimum value when product is greater than current product.
+When the iteration is greater than the current product value obtained = 
+ Int current product 0;
+	if (current product value < new product) {
+	  return new product and store.
+	}
+ Once iteration is complete we should have the greatest product of the array from four numbers.
+ 
+
+
+
