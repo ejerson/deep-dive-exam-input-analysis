@@ -8,14 +8,28 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This is a class that implements a method to parse an array of an array of integers and
+ * returns the largest product of 4 adjacent integers.
+ *
+ *
+ */
 public class File {
 
+  /** References a .txt file to input a string of integers.*/
   private static final String FILENAME = "largest-product-data.txt";
 
+  /**
+   * Creates a stream that results in an array of strings.
+   *
+   * @param filename retrieves a data.txt file with a matrix of numbers
+   * @return Returns an array of integers
+   * @throws IOException Throws an IOException
+   */
   public static String[] getLines(String filename)
       throws IOException {
 
-    // try with resources
+
     try (
         FileInputStream inStream = new FileInputStream(filename);
         InputStreamReader reader = new InputStreamReader(inStream);
@@ -34,14 +48,21 @@ public class File {
     }
   }
 
+  /**
+   *
+   * Creates matrix using the data received from the getLines method.
+   *
+   * @param lines String of numbers
+   * @param delimiter Splits the string of numbers into separate lines
+   * @return Returns a matrix of integers
+   */
   public static int[][] getMatrix(String[] lines, String delimiter) {
-    // allocates space for the references for each row
+
     int[][] data = new int[lines.length][];
     for(int i = 0; i < lines.length; i++) {
-      // use the delimiter to use as the template for my chunks.
+
       String[] parts = lines[i].split(delimiter);
       int[] row = new int[parts.length];
-      // loop to go across the columns
       for (int j = 0; j < parts.length; j++) {
         row[j] = Integer.parseInt(parts[j]);
       }
@@ -50,20 +71,22 @@ public class File {
     return data;
   }
 
+  /**
+   *
+   * Checks the matrix of numbers and returns the largest product of four adjacent numbers.
+   *
+   * Could not get to work.
+   *
+   * @param args Given a string of numbers, take 4 adjacent numbers, get product of said numbers
+   * @throws IOException Throws IOException
+   */
   public static void main(String[] args)
       throws IOException {
-//    try {
-//      for (String line : getLines(FILENAME)) {
-//        System.out.println(line);
-//      }
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
+
 
 
     for (int[] row : getMatrix(getLines(FILENAME), "\\s+")) {
-      // Arrays.toString places arrays into brackets
-      // because java sucks at printing multi-dimensional arrays
+
 
 
       String grid = Arrays.toString(row);
