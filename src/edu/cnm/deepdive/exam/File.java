@@ -55,6 +55,8 @@ public class File {
    * @param lines String of numbers
    * @param delimiter Splits the string of numbers into separate lines
    * @return Returns a matrix of integers
+   *
+   * @ver 1.0
    */
   public static int[][] getMatrix(String[] lines, String delimiter) {
 
